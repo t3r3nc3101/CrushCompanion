@@ -1,1 +1,4 @@
-Interactive desktop companion - Shows invader zero & the live CRUSH price.
+Interactive desktop companion
+
+- Invader zero on desktop showing the live CRUSH price
+- tba
