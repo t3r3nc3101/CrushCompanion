@@ -39,10 +39,9 @@ xmlns:tb="http://www.hardcodet.net/taskbar"
 
         <Image x:Name="image" Height="100" Width="100" gif:ImageBehavior.AnimatedSource="/floating_invader_zero.gif" Source="/floating_invader_zero.gif"/>
         <Label x:Name="priceLabel" Content="$0.99999999" Margin="50,160,0,0" Height="37" Width="170" Canvas.Left="-85" Canvas.Top="-65" FontSize="18" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift SemiBold" Opacity="0.9"/>
-        
 
-        <tb:TaskbarIcon
-      ToolTipText="Crush Companion v0.1" IconSource="/ICON_invader_zero.ico" />
+
+
 
 
     </Canvas>

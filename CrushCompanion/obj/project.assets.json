@@ -169,11 +169,11 @@
   "project": {
     "version": "0.1.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\T3\\source\\repos\\CrushCompanion\\CrushCompanion\\CrushCompanion.vbproj",
+      "projectUniqueName": "C:\\Users\\T3\\source\\GITHUB\\CrushCompanion\\CrushCompanion\\CrushCompanion.vbproj",
       "projectName": "CrushCompanion",
-      "projectPath": "C:\\Users\\T3\\source\\repos\\CrushCompanion\\CrushCompanion\\CrushCompanion.vbproj",
+      "projectPath": "C:\\Users\\T3\\source\\GITHUB\\CrushCompanion\\CrushCompanion\\CrushCompanion.vbproj",
       "packagesPath": "C:\\Users\\T3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\T3\\source\\repos\\CrushCompanion\\CrushCompanion\\obj\\",
+      "outputPath": "C:\\Users\\T3\\source\\GITHUB\\CrushCompanion\\CrushCompanion\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

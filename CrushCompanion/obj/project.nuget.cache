@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "un4ZpuYDnfC3ssSX38m23XU5Zsy8t5ZftUmQotd0dfsxindbAYma5x+YdcE5Oa+5kp2W7WmaKNuyHnMGJMeRkg==",
+  "dgSpecHash": "V6lWhzKsbzV3pnm5rd2PcqZUjeg1E41E1wHuxRxAoo4AkqSAxZ4l5lXSsT3ciYkcLZmYKt/94bySHsfUmxSSjQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\T3\\source\\repos\\CrushCompanion\\CrushCompanion\\CrushCompanion.vbproj",
+  "projectFilePath": "C:\\Users\\T3\\source\\GITHUB\\CrushCompanion\\CrushCompanion\\CrushCompanion.vbproj",
   "expectedPackageFiles": [
     "C:\\Users\\T3\\.nuget\\packages\\hardcodet.notifyicon.wpf\\1.0.5\\hardcodet.notifyicon.wpf.1.0.5.nupkg.sha512",
     "C:\\Users\\T3\\.nuget\\packages\\hardcodet.wpf.taskbarnotification\\1.0.5\\hardcodet.wpf.taskbarnotification.1.0.5.nupkg.sha512",

@@ -131,8 +131,8 @@ Class MainWindow
 
         moveDown()
 
-        Debug.WriteLine(display1Width.ToString)
-        Debug.WriteLine(display1Height.ToString)
+        ' Debug.WriteLine(display1Width.ToString)
+        '  Debug.WriteLine(display1Height.ToString)
 
         json()
         Dim dt As DispatcherTimer = New DispatcherTimer()
@@ -164,8 +164,8 @@ Class MainWindow
     End Sub
 
 
-    Dim currentCreature = 0
-
+    '   Dim currentCreature = 0
+    '
     '    Function changeimage()
     '
     ' getRunningProgs()
@@ -291,7 +291,7 @@ Class MainWindow
             randomvaluex = generatorx.Next(50, 100)
             dpTimer2.Interval = TimeSpan.FromMilliseconds(randomvaluex) '5000
 
-            Debug.WriteLine(mouseLocation.X)
+            '   Debug.WriteLine(mouseLocation.X)
             If mouseLocation.X >= 125 And stayStill = False Then     '''' specified image size here (125 - half image)
                 directionAmount = mouseLocation.X * 0.01 ' was 5
             End If
@@ -353,7 +353,7 @@ Class MainWindow
 
     Private Sub followMouseChecked(sender As Object, e As RoutedEventArgs)
         followMouse = True
-        Debug.WriteLine("follow!")
+        '  Debug.WriteLine("follow!")
     End Sub
     Private Sub followMouseUnchecked(sender As Object, e As RoutedEventArgs)
         followMouse = False
