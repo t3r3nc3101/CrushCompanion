@@ -159,8 +159,22 @@ Class MainWindow
         moveDown()
     End Sub
 
+    Dim priceVisbile = True
     Private Sub Window_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
-        Me.DragMove()
+
+        If (e.ClickCount = 2) Then
+            If (priceVisbile = True) Then
+                priceLabel.Visibility = Visibility.Visible
+                priceVisbile = False
+            Else
+                priceLabel.Visibility = Visibility.Hidden
+                priceVisbile = True
+            End If
+        Else
+            Me.DragMove()
+
+        End If
+
     End Sub
 
 

@@ -73,3 +73,4 @@ C:\Users\T3\source\GITHUB\CrushCompanion\CrushCompanion\obj\Debug\netcoreapp3.1\
 C:\Users\T3\source\GITHUB\CrushCompanion\CrushCompanion\obj\Debug\netcoreapp3.1\CrushCompanion.dll
 C:\Users\T3\source\GITHUB\CrushCompanion\CrushCompanion\obj\Debug\netcoreapp3.1\CrushCompanion.pdb
 C:\Users\T3\source\GITHUB\CrushCompanion\CrushCompanion\obj\Debug\netcoreapp3.1\CrushCompanion.genruntimeconfig.cache
+C:\Users\T3\source\GITHUB\CrushCompanion\CrushCompanion\obj\Debug\netcoreapp3.1\CrushCompanion.vbproj.AssemblyReference.cache
