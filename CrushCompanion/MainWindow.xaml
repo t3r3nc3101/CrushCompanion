@@ -8,7 +8,7 @@
         xmlns:local="clr-namespace:CrushCompanion"
 xmlns:tb="http://www.hardcodet.net/taskbar" 
         mc:Ignorable="d"
-        Title="Crush Companion" Height="250" Width="250" ResizeMode="NoResize" Topmost="True" Loaded="Window_Loaded" MouseLeftButtonUp="Window_MouseLeftButtonUp" MouseLeftButtonDown="Window_MouseLeftButtonDown" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="Manual" IsTabStop="False" ShowInTaskbar="False" ContextMenuOpening="Window_ContextMenuOpening" ContextMenuClosing="Window_ContextMenuClosing" Opacity="0.75">
+        Title="Crush Companion" Height="250" Width="250" ResizeMode="NoResize" Topmost="True" Loaded="Window_Loaded" MouseLeftButtonUp="Window_MouseLeftButtonUp" MouseLeftButtonDown="Window_MouseLeftButtonDown" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="Manual" IsTabStop="False" ShowInTaskbar="False" ContextMenuOpening="Window_ContextMenuOpening" ContextMenuClosing="Window_ContextMenuClosing" Opacity="0.75" Icon="/ICON_invader_zero.ico">
     <Window.ContextMenu>
         <ContextMenu>
             <MenuItem Header = "_Currency" >
