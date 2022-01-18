@@ -20,13 +20,20 @@ Class MainWindow
     '''''''''''''''' NEW 2022 '''''''''''''''''''''''''''''''''''''''''''
     Dim firstItem
     Dim previousAmount = 999
+    Dim selectedCurrency = "usd"
+    Dim selectedPriceColor = "white"
+
     Function json()
         'MyCredentials As System.Net.NetworkCredential           ' define default app credentials
         'MyCredentials = New System.Net.NetworkCredential(userName:="...", password:="...")
-        Dim request As WebRequest = WebRequest.Create("https://api.coingecko.com/api/v3/simple/price?ids=bitcrush&vs_currencies=USD")
+
+        Dim updatedURL = "https://api.coingecko.com/api/v3/simple/price?ids=bitcrush&vs_currencies=selectedCurrency"
+        Dim finalURL = updatedURL.Replace("selectedCurrency", selectedCurrency)
+
+        Dim request As WebRequest = WebRequest.Create(finalURL)
 
         request.Method = "GET"
-        ' request.Credentials = MyCredentials                         ' set default credentials
+        ' request.Credentials = MyCredentials                        ' set default credentials
         Dim response As WebResponse = request.GetResponse()         ' fire this puppy off
         Dim inputstream1 As Stream = response.GetResponseStream()   ' define the stream(must be stream
         Dim reader As New StreamReader(inputstream1)                ' get the data stream set
@@ -35,7 +42,7 @@ Class MainWindow
         reader.Close()                                              ' house keeping
         response.Close()
         Dim objects = JObject.Parse(workspace)
-        firstItem = objects.Item("bitcrush").Item("usd")
+        firstItem = objects.Item("bitcrush").Item(selectedCurrency)
         Debug.WriteLine(firstItem)
 
         priceLabel.Content = "$" & firstItem
@@ -45,10 +52,16 @@ Class MainWindow
         ElseIf firstItem < previousAmount And previousAmount <> 999 Then
             priceLabel.Foreground = Brushes.Red
         ElseIf firstItem = previousAmount Then
-            priceLabel.Foreground = Brushes.White
+
+            If selectedPriceColor = "white" Then
+                priceLabel.Foreground = Brushes.White
+            ElseIf selectedPriceColor = "black" Then
+                priceLabel.Foreground = Brushes.Black
+            End If
+
         End If
 
-        previousAmount = firstItem
+            previousAmount = firstItem
 
     End Function
 
@@ -124,8 +137,7 @@ Class MainWindow
 
     ' tstzzzzz
 
-
-
+    Dim loadFinished = False
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         Me.WindowStyle = 0
 
@@ -152,6 +164,7 @@ Class MainWindow
 
         NewTimerPls()
 
+        loadFinished = True
 
     End Sub
 
@@ -159,21 +172,10 @@ Class MainWindow
         moveDown()
     End Sub
 
-    Dim priceVisbile = True
     Private Sub Window_MouseLeftButtonDown(sender As Object, e As MouseButtonEventArgs)
 
-        If (e.ClickCount = 2) Then
-            If (priceVisbile = True) Then
-                priceLabel.Visibility = Visibility.Visible
-                priceVisbile = False
-            Else
-                priceLabel.Visibility = Visibility.Hidden
-                priceVisbile = True
-            End If
-        Else
-            Me.DragMove()
+        Me.DragMove()
 
-        End If
 
     End Sub
 
@@ -298,19 +300,19 @@ Class MainWindow
             ElseIf currentLeftPosition > display1Width - 250 And stayStill = False Then '''' specified image size here
                 directionAmount = -5
             End If
-        ElseIf followMouse = True Then  '''' folooow moouseee hereeee
+        ElseIf followMouse = True Then  '''' folooow moouseee hereeee ''''''''''''''''''''''''''''
 
-            Dim generatorx As New Random()
-            Dim randomvaluex As Decimal
-            randomvaluex = generatorx.Next(50, 100)
-            dpTimer2.Interval = TimeSpan.FromMilliseconds(randomvaluex) '5000
+            '  Dim generatorx As New Random()
+            '  Dim randomvaluex As Decimal
+            ' randomvaluex = generatorx.Next(50, 100)
+            ' dpTimer2.Interval = TimeSpan.FromMilliseconds(randomvaluex)
 
             '   Debug.WriteLine(mouseLocation.X)
             If mouseLocation.X >= 125 And stayStill = False Then     '''' specified image size here (125 - half image)
-                directionAmount = mouseLocation.X * 0.01 ' was 5
+                directionAmount = mouseLocation.X * 0.02 ' was 5
             End If
             If mouseLocation.X < 0 And stayStill = False Then     '''' specified image size here (125 - half image)
-                Dim tempAmount = mouseLocation.X * 0.01
+                Dim tempAmount = mouseLocation.X * 0.02
                 directionAmount = tempAmount
             End If
         End If
@@ -373,7 +375,46 @@ Class MainWindow
         followMouse = False
     End Sub
 
+    Private Sub CLICK_AREA_MouseEnter(sender As Object, e As MouseEventArgs) Handles CLICK_AREA.MouseEnter
+        priceLabel.Opacity = 1
+    End Sub
 
+    Private Sub CLICK_AREA_MouseLeave(sender As Object, e As MouseEventArgs) Handles CLICK_AREA.MouseLeave
+        priceLabel.Opacity = 0.6
+    End Sub
+
+    Private Sub USD_Button_Click(sender As Object, e As RoutedEventArgs) Handles USD_Button.Click
+        CurrencyHeader.Header = "Currency [USD]"
+        selectedCurrency = "usd"
+        json()
+    End Sub
+
+    Private Sub AUD_Button_Click(sender As Object, e As RoutedEventArgs) Handles AUD_Button.Click
+        CurrencyHeader.Header = "Currency [AUD]"
+        selectedCurrency = "aud"
+        json()
+    End Sub
+
+    Private Sub Black_Button_Click(sender As Object, e As RoutedEventArgs) Handles Black_Button.Click
+        PriceColor_Header.Header = "Price color [B]"
+        priceLabel.Foreground = Brushes.Black
+        selectedPriceColor = "black"
+    End Sub
+
+    Private Sub White_Button_Click(sender As Object, e As RoutedEventArgs) Handles White_Button.Click
+        PriceColor_Header.Header = "Price color [W]"
+        priceLabel.Foreground = Brushes.White
+        selectedPriceColor = "white"
+    End Sub
+
+
+    Private Sub MenuItem_Checked(sender As Object, e As RoutedEventArgs)
+        If loadFinished = True Then
+            priceLabel.Visibility = Visibility.Visible
+        End If
+    End Sub
+
+    Private Sub MenuItem_Unchecked(sender As Object, e As RoutedEventArgs)
+        priceLabel.Visibility = Visibility.Hidden
+    End Sub
 End Class
-
-

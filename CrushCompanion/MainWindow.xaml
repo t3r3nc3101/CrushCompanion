@@ -7,16 +7,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrushCompanion"
 xmlns:tb="http://www.hardcodet.net/taskbar" 
-        mc:Ignorable="d"
-        Title="Crush Companion" Height="250" Width="250" ResizeMode="NoResize" Topmost="True" Loaded="Window_Loaded" MouseLeftButtonUp="Window_MouseLeftButtonUp" MouseLeftButtonDown="Window_MouseLeftButtonDown" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="Manual" IsTabStop="False" ShowInTaskbar="False" ContextMenuOpening="Window_ContextMenuOpening" ContextMenuClosing="Window_ContextMenuClosing" Opacity="0.75" Icon="/ICON_invader_zero.ico">
+        mc:Ignorable="d" Height="250" Width="250" ResizeMode="NoResize" Topmost="True" Loaded="Window_Loaded" MouseLeftButtonUp="Window_MouseLeftButtonUp" MouseLeftButtonDown="Window_MouseLeftButtonDown" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="Manual" IsTabStop="False" ShowInTaskbar="False" ContextMenuOpening="Window_ContextMenuOpening" ContextMenuClosing="Window_ContextMenuClosing" Opacity="0.85" Icon="/ICON_invader_zero.ico">
     <Window.ContextMenu>
         <ContextMenu>
-            <MenuItem Header = "_Currency" >
-                <ComboBoxItem Content="AUD" />
-                <ComboBoxItem Content="USD"/>
+            <MenuItem x:Name="CurrencyHeader" Header ="_Currency [USD]" >
+                <MenuItem x:Name="USD_Button" Header="USD"/>
+                <MenuItem x:Name="AUD_Button" Header="AUD"/>
+            </MenuItem>
+            <MenuItem x:Name="PriceColor_Header" Header ="_Price color {W]">
+                <MenuItem x:Name="White_Button" Header="White"/>
+                <MenuItem x:Name="Black_Button" Header="Black"/>
             </MenuItem>
             <Separator />
-            <MenuItem Header = "_Follow Mouse" IsCheckable = "True" IsChecked=" false" 
+            <MenuItem Header = "_Show Price" IsCheckable = "True" IsChecked="True" Checked="MenuItem_Checked" Unchecked="MenuItem_Unchecked"/>
+            <MenuItem Header = "_Follow Mouse (soon)" IsCheckable = "True" IsChecked=" false" IsEnabled="false"
                   Checked = "followMouseChecked" Unchecked = "followMouseUnchecked" />
             <MenuItem Header = "_Gravity" IsCheckable = "True" IsChecked=" true" 
                   Checked = "gravityChecked" Unchecked = "gravityUnchecked" />
@@ -27,9 +31,9 @@ xmlns:tb="http://www.hardcodet.net/taskbar"
             <MenuItem Header = "_REMOVE" Click = "kill" Foreground="#FFDE1818" FontWeight="Bold" />
         </ContextMenu>
     </Window.ContextMenu>
-    
-    
-   
+
+
+
     <Window.Background>
         <SolidColorBrush Color="White" Opacity="0"/>
     </Window.Background>
@@ -38,7 +42,9 @@ xmlns:tb="http://www.hardcodet.net/taskbar"
     <Canvas Height="Auto" Margin="75,75,75,75" Width="Auto">
 
         <Image x:Name="image" Height="100" Width="100" gif:ImageBehavior.AnimatedSource="/floating_invader_zero.gif" Source="/floating_invader_zero.gif"/>
-        <Label x:Name="priceLabel" Content="$0.99999999" Margin="50,160,0,0" Height="37" Width="170" Canvas.Left="-85" Canvas.Top="-65" FontSize="18" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift SemiBold" Opacity="0.9"/>
+        <Label x:Name="priceLabel" Content="$99.99999999" Margin="50,160,0,0" Height="37" Width="170" Canvas.Left="-85" Canvas.Top="-65" FontSize="18" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Bahnschrift SemiBold" Opacity="0.5" IsHitTestVisible="False"/>
+
+        <Rectangle x:Name="CLICK_AREA" Height="147" Width="130" Fill="Black" Opacity="0" Canvas.Left="-15" Canvas.Top="-15"/>
 
 
 

@@ -9,6 +9,8 @@
     <Company />
     <Version>0.1</Version>
     <ApplicationIcon>ICON_invader_zero.ico</ApplicationIcon>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <AssemblyName>CrushCompanion</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

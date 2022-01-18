@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "dgSpecHash": "UE4YHTfO+D7mUtpz3Vf3jSY3pKjB9kZsv9Kkz3KxKRv4sclOhFZw3PLg+2y7ZXScWap0MWu2WURfKCu4uf29/w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\T3\\source\\GITHUB\\CrushCompanion\\CrushCompanion\\CrushCompanion.vbproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\T3\\.nuget\\packages\\hardcodet.notifyicon.wpf\\1.0.5\\hardcodet.notifyicon.wpf.1.0.5.nupkg.sha512",
+    "C:\\Users\\T3\\.nuget\\packages\\hardcodet.wpf.taskbarnotification\\1.0.5\\hardcodet.wpf.taskbarnotification.1.0.5.nupkg.sha512",
+    "C:\\Users\\T3\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\T3\\.nuget\\packages\\screenversuswpf\\1.0.9\\screenversuswpf.1.0.9.nupkg.sha512",
+    "C:\\Users\\T3\\.nuget\\packages\\wpfanimatedgif\\2.0.0\\wpfanimatedgif.2.0.0.nupkg.sha512",
+    "C:\\Users\\T3\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\3.1.22\\microsoft.netcore.app.runtime.win-x86.3.1.22.nupkg.sha512",
+    "C:\\Users\\T3\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\3.1.22\\microsoft.windowsdesktop.app.runtime.win-x86.3.1.22.nupkg.sha512",
+    "C:\\Users\\T3\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\3.1.22\\microsoft.aspnetcore.app.runtime.win-x86.3.1.22.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Hardcodet.NotifyIcon.Wpf 1.0.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Hardcodet.NotifyIcon.Wpf",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ScreenVersusWpf 1.0.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "ScreenVersusWpf",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}
