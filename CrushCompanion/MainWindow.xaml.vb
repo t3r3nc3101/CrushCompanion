@@ -22,6 +22,7 @@ Class MainWindow
     Dim previousAmount = 999
     Dim selectedCurrency = "usd"
     Dim selectedPriceColor = "white"
+    Dim priceOrHoldings = "price"
 
     Function json()
         'MyCredentials As System.Net.NetworkCredential           ' define default app credentials
@@ -45,7 +46,11 @@ Class MainWindow
         firstItem = objects.Item("bitcrush").Item(selectedCurrency)
         Debug.WriteLine(firstItem)
 
-        priceLabel.Content = "$" & firstItem
+        If priceOrHoldings = "price" Then
+            priceLabel.Content = "$" & firstItem
+        ElseIf priceOrHoldings = "holdings" Then
+            priceLabel.Content = "$" & Convert.ToInt32((Convert.ToDouble(definedHoldings.Text) * Convert.ToDouble(firstItem)))
+        End If
 
         If firstItem > previousAmount And previousAmount <> 999 Then
             priceLabel.Foreground = Brushes.Green
@@ -408,13 +413,34 @@ Class MainWindow
     End Sub
 
 
-    Private Sub MenuItem_Checked(sender As Object, e As RoutedEventArgs)
+    Private Sub ShowPrice_checkbox_Checked(sender As Object, e As RoutedEventArgs) Handles ShowPrice_checkbox.Checked
         If loadFinished = True Then
+            ShowHoldings_checkbox.IsChecked = False
             priceLabel.Visibility = Visibility.Visible
+            priceOrHoldings = "price"
+            json()
         End If
     End Sub
 
-    Private Sub MenuItem_Unchecked(sender As Object, e As RoutedEventArgs)
+    Private Sub ShowPrice_checkbox_Unchecked(sender As Object, e As RoutedEventArgs) Handles ShowPrice_checkbox.Unchecked
         priceLabel.Visibility = Visibility.Hidden
+    End Sub
+
+
+    Private Sub ShowHoldings_checkbox_Checked(sender As Object, e As RoutedEventArgs) Handles ShowHoldings_checkbox.Checked
+        If loadFinished = True Then
+            ShowPrice_checkbox.IsChecked = False
+            priceLabel.Visibility = Visibility.Visible
+            priceOrHoldings = "holdings"
+            json()
+        End If
+    End Sub
+
+    Private Sub ShowHoldings_checkbox_Unchecked(sender As Object, e As RoutedEventArgs) Handles ShowHoldings_checkbox.Unchecked
+        priceLabel.Visibility = Visibility.Hidden
+    End Sub
+
+    Private Sub holdingAmount_LostKeyboardFocus(sender As Object, e As KeyboardFocusChangedEventArgs) Handles holdingAmount.LostKeyboardFocus
+        json()
     End Sub
 End Class

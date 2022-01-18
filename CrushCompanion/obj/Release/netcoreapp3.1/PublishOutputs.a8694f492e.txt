@@ -1,9 +1,0 @@
-C:\Users\T3\source\GITHUB\CrushCompanion\CrushCompanion\bin\Release\netcoreapp3.1\publish\CrushCompanion.exe
-C:\Users\T3\source\GITHUB\CrushCompanion\CrushCompanion\bin\Release\netcoreapp3.1\publish\CrushCompanion.dll
-C:\Users\T3\source\GITHUB\CrushCompanion\CrushCompanion\bin\Release\netcoreapp3.1\publish\CrushCompanion.deps.json
-C:\Users\T3\source\GITHUB\CrushCompanion\CrushCompanion\bin\Release\netcoreapp3.1\publish\CrushCompanion.runtimeconfig.json
-C:\Users\T3\source\GITHUB\CrushCompanion\CrushCompanion\bin\Release\netcoreapp3.1\publish\CrushCompanion.pdb
-C:\Users\T3\source\GITHUB\CrushCompanion\CrushCompanion\bin\Release\netcoreapp3.1\publish\Hardcodet.Wpf.TaskbarNotification.dll
-C:\Users\T3\source\GITHUB\CrushCompanion\CrushCompanion\bin\Release\netcoreapp3.1\publish\Newtonsoft.Json.dll
-C:\Users\T3\source\GITHUB\CrushCompanion\CrushCompanion\bin\Release\netcoreapp3.1\publish\ScreenVersusWpf.dll
-C:\Users\T3\source\GITHUB\CrushCompanion\CrushCompanion\bin\Release\netcoreapp3.1\publish\WpfAnimatedGif.dll

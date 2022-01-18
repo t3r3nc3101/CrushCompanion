@@ -19,7 +19,13 @@ xmlns:tb="http://www.hardcodet.net/taskbar"
                 <MenuItem x:Name="Black_Button" Header="Black"/>
             </MenuItem>
             <Separator />
-            <MenuItem Header = "_Show Price" IsCheckable = "True" IsChecked="True" Checked="MenuItem_Checked" Unchecked="MenuItem_Unchecked"/>
+            <MenuItem Header ="_Text Display">
+            <MenuItem x:Name="ShowPrice_checkbox" Header = "_Show Current Price" IsCheckable = "True" IsChecked="True"/>
+            <MenuItem x:Name="ShowHoldings_checkbox" Header = "_Show Holdings Worth" IsCheckable = "True" IsChecked="False"/>
+            <MenuItem x:Name="holdingAmount" Header ="_Holding Amount (CRUSH)" >
+                <TextBox x:Name="definedHoldings" Width="100" UndoLimit="10" Text="1"></TextBox>
+            </MenuItem>
+            </MenuItem>
             <MenuItem Header = "_Follow Mouse (soon)" IsCheckable = "True" IsChecked=" false" IsEnabled="false"
                   Checked = "followMouseChecked" Unchecked = "followMouseUnchecked" />
             <MenuItem Header = "_Gravity" IsCheckable = "True" IsChecked=" true" 
